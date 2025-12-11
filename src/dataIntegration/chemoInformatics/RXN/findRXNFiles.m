@@ -41,7 +41,8 @@ rxnRXNBool = (ismember(model.rxns,aRxns)); % True for atom mapped reactions
 
 assert(any(rxnRXNBool), 'No RXN files found for model reactions.\nCheck that rxnfile names match reaction identifiers in rxns.');
 
-if any(~rxnRXNBool)
+if any(rxnRXNBool)   %if any(~rxnRXNBool)
+    
     if isfield(model,'SConsistentRxnBool')
         internalRxnBool = model.SConsistentRxnBool;
     else
